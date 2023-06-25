@@ -294,3 +294,19 @@ paths:
                   networkData:
                     type: "object"
                     description: "The latest Planets API JSON output"
+  /Rovers/:
+    get:
+      operationId: "getRovers"
+      summary: "Get Rovers JSON"
+      description: "Retrieve the Rovers JSON data from the API."
+      responses:
+        '200':
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  networkData:
+                    type: "object"
+                    description: "The latest Rovers API JSON output"

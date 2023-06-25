@@ -52,6 +52,7 @@ urlpatterns = [
     path('Earth_Polychromatic_Imaging_Camera/', views.space_earth_poly_image_API),
     path('Known_Celestial_Body_Count/', views.space_known_bodies_API),
     path('Planets/', views.space_planets_API),
+    path('Rovers/', views.space_rovers_API),
     path('.well-known/<path:file_path>', WellKnownView.as_view()),
     path('.well-known/acme-challenge/<path:file_path>', ACME.as_view()),    
 ]

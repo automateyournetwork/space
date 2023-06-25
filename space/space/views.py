@@ -256,3 +256,17 @@ def space_planets_API(request):
         'latest_proposed_dict': latest_answer
     }
     return render(request, 'Answer/space_answer.html', latest_proposed_dict)
+
+def space_rovers_API(request):
+    refreshme = space_api_output.objects.all()
+    refreshme.delete()
+    refreshmetoo = space_api_to_get.objects.all()
+    refreshmetoo.delete()    
+    savecommand = space_api_to_get(space_api = "https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key={ self.token }")
+    savecommand.save()    
+    os.system('python3 spaceAPI.py')
+    latest_answer = space_api_output.objects.all()
+    latest_proposed_dict = {
+        'latest_proposed_dict': latest_answer
+    }
+    return render(request, 'Answer/space_answer.html', latest_proposed_dict)
