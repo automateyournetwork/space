@@ -102,6 +102,12 @@ class Space_Plugin():
                     for moon in body['moons']:
                         del moon['rel']
 
+        if 'rovers/?api_key=' in new_api:
+            for rover in json_response['rovers']:
+                del(rover['id'])
+                for camera in rover['cameras']:
+                    del(camera['id'])
+
         if "neo" in new_api:   
             chatGPTAnswer=space_api_output(space_api_output = json.dumps(neos_on_first_date,sort_keys=True,indent=4))
         elif 'notifications' in new_api:
@@ -121,6 +127,8 @@ class Space_Plugin():
             chatGPTAnswer=space_api_output(space_api_output = json.dumps(first_five,sort_keys=True,indent=4))
         elif 'bodies?filter[]=isPlanet,eq,true' in new_api:
             chatGPTAnswer=space_api_output(space_api_output = json.dumps(json_response['bodies'],sort_keys=True,indent=4))
+        elif 'rovers/?api_key=' in new_api:
+            chatGPTAnswer=space_api_output(space_api_output = json.dumps(json_response['rovers'],sort_keys=True,indent=4))
         else:
             chatGPTAnswer=space_api_output(space_api_output = json.dumps(json_response,sort_keys=True,indent=4))
         chatGPTAnswer.save()    
