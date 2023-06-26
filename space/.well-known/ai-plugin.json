@@ -12,7 +12,7 @@
         "url": "https://space.automateyournetwork.ca/.well-known/openapi.yaml",
         "is_user_authenticated": false
     },
-    "logo_url": "https://pokedex.automateyournetwork.ca/staticfiles/space.jpg",
+    "logo_url": "https://space.automateyournetwork.ca/staticfiles/space.jpg",
     "contact_email": "ptcapo@gmail.com",
     "legal_info_url": "https://space.automateyournetwork.ca/.well-known/legal.txt"
 }
