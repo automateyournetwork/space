@@ -107,7 +107,8 @@ class Space_Plugin():
                 if 'id' in rover:
                     del(rover['id'])
                 for camera in rover['cameras']:
-                    del(camera['id'])
+                    if 'id' in camera:
+                        del(camera['id'])
 
         if "neo" in new_api:   
             chatGPTAnswer=space_api_output(space_api_output = json.dumps(neos_on_first_date,sort_keys=True,indent=4))
