@@ -104,7 +104,8 @@ class Space_Plugin():
 
         if 'rovers/?api_key=' in new_api:
             for rover in json_response['rovers']:
-                del(rover['id'])
+                if 'id' in rover:
+                    del(rover['id'])
                 for camera in rover['cameras']:
                     del(camera['id'])
 
