@@ -2,6 +2,8 @@ version: '3'
  
 services:
   space:
+    environment:
+      - HOST_NAME="https://space.automateyournetwork.ca"
     container_name: space
     image: johncapobianco/space:space
     build: 
