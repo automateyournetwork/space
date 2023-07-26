@@ -134,9 +134,9 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'sentry-trace'
 ]
 
-CSRF_TRUSTED_ORIGINS=['https://*.automateyournetwork.ca','*']
+CSRF_TRUSTED_ORIGINS=['https://space.automateyournetwork.ca']
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
