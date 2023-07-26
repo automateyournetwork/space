@@ -27,3 +27,6 @@ services:
 volumes:
   pgadmin:
     driver: local
+
+networks:
+  app_network:    
