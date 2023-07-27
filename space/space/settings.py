@@ -134,10 +134,6 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'sentry-trace'
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    "https://space.automateyournetwork.ca",
-]
-
 CSRF_TRUSTED_ORIGINS=['space.automateyournetwork.ca']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
