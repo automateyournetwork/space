@@ -5,6 +5,7 @@ services:
     environment:
       - HOST_NAME="https://space.automateyournetwork.ca"
     container_name: space
+    restart: always
     image: johncapobianco/space:space
     build: 
       context: ./
@@ -15,6 +16,8 @@ services:
       - db
     # volumes:
     #   - /etc/letsencrypt/archive/space.automateyournetwork.ca/:/etc/letsencrypt/live/space.automateyournetwork.ca/
+    networks:
+      - all-plugins-nginx-proxy_app_network
 
   db:
     image: 'postgres'
@@ -33,5 +36,6 @@ volumes:
 
 networks:
   all-plugins-nginx-proxy_app_network:
-    name: all-plugins-nginx-proxy_app_network
+    external: true
+    driver: bridge
   
